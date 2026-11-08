@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://ed1wddwbjyd1"]
+
+[ext_resource type="PackedScene" uid="uid://jfau057w4ar3" path="res://scene/card_scene.tscn" id="1_2twrx"]
+[ext_resource type="Script" uid="uid://fmb5obsfhyuh" path="res://scripts/card_table.gd" id="1_vw0ul"]
+[ext_resource type="PackedScene" uid="uid://dmlxwdwdxceh6" path="res://scene/deck.tscn" id="3_vw0ul"]
+
+[node name="CardTable" type="Node2D" unique_id=1706338384]
+script = ExtResource("1_vw0ul")
+
+[node name="table" type="Polygon2D" parent="." unique_id=481932870]
+position = Vector2(8, 0)
+scale = Vector2(2.5714283, 2.0249999)
+color = Color(0.054784574, 0.28832805, 0.011337961, 1)
+polygon = PackedVector2Array(0, 0, 448, 0, 448, 320, 0, 320)
+
+[node name="OppCards" type="Node2D" parent="." unique_id=1445412048]
+
+[node name="Card1" parent="OppCards" unique_id=1209566767 instance=ExtResource("1_2twrx")]
+position = Vector2(400, 32)
+
+[node name="Card2" parent="OppCards" unique_id=1517042053 instance=ExtResource("1_2twrx")]
+position = Vector2(616, 32)
+
+[node name="Card3" parent="OppCards" unique_id=217734626 instance=ExtResource("1_2twrx")]
+position = Vector2(688, 32)
+
+[node name="Card4" parent="OppCards" unique_id=406950085 instance=ExtResource("1_2twrx")]
+position = Vector2(472, 32)
+
+[node name="Card5" parent="OppCards" unique_id=363099260 instance=ExtResource("1_2twrx")]
+position = Vector2(544, 32)
+
+[node name="PlayerCards" type="Node2D" parent="." unique_id=522403625]
+
+[node name="Card1" parent="PlayerCards" unique_id=836326544 instance=ExtResource("1_2twrx")]
+position = Vector2(400, 448)
+
+[node name="Card2" parent="PlayerCards" unique_id=1765455622 instance=ExtResource("1_2twrx")]
+position = Vector2(472, 448)
+
+[node name="Card3" parent="PlayerCards" unique_id=1804466728 instance=ExtResource("1_2twrx")]
+position = Vector2(544, 448)
+
+[node name="Card4" parent="PlayerCards" unique_id=1753634653 instance=ExtResource("1_2twrx")]
+position = Vector2(616, 448)
+
+[node name="Card5" parent="PlayerCards" unique_id=1042487649 instance=ExtResource("1_2twrx")]
+position = Vector2(688, 448)
+
+[node name="Deck" parent="." unique_id=817762067 instance=ExtResource("3_vw0ul")]
+position = Vector2(32, 16)
+
+[node name="Button" type="Button" parent="." unique_id=1862408156]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 8.0
+offset_top = 584.0
+offset_right = 49.0
+offset_bottom = 632.0
+text = "Deal
+"

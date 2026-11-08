@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="ubhacking2026"
+run/main_scene="uid://codpipo3fpwkl"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://assets/textures/icon.svg"
+
+[autoload]
+
+Types="*uid://p13rkeplr3mi"
+Consts="*uid://dy4unob8ng2c5"
 
 [display]
 

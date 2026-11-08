@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dmlxwdwdxceh6"]
+
+[ext_resource type="Script" uid="uid://bfajorjwuot2t" path="res://scripts/deck.gd" id="1_75a8u"]
+
+[node name="Deck" type="Node2D" unique_id=817762067]
+script = ExtResource("1_75a8u")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=533751560]
+color = Color(1, 0.5019608, 0.4862745, 1)
+polygon = PackedVector2Array(8, 0, 56, 0, 64, 8, 64, 120, 56, 128, 8, 128, 0, 120, 0, 8)
+
+[node name="Label" type="Label" parent="." unique_id=281482530]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 56.0
+offset_bottom = 39.0
+text = "TEST"

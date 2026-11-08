@@ -1,3 +1,7 @@
 [gd_scene format=3 uid="uid://codpipo3fpwkl"]
 
+[ext_resource type="PackedScene" uid="uid://ed1wddwbjyd1" path="res://scene/CardTable.tscn" id="1_itxqv"]
+
 [node name="Node2D" type="Node2D" unique_id=1261517631]
+
+[node name="CardTable" parent="." unique_id=1706338384 instance=ExtResource("1_itxqv")]
