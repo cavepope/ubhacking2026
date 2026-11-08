@@ -19,8 +19,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func update(c: Types.Card) -> void:
-	value = c
+func update_render() -> void:
 	if not face_up:
 		render_value.text = ""
 		render_suit.text = ""
@@ -41,6 +40,12 @@ func update(c: Types.Card) -> void:
 		render_suit.add_theme_color_override("font_outline_color", Color.BLACK)
 		render_value.add_theme_color_override("font_color", Color.BLACK)
 		render_value.add_theme_color_override("font_outline_color", Color.BLACK)
+	
+
+func update(c: Types.Card) -> void:
+	value = c
+	update_render()
+	
 		
 	
 

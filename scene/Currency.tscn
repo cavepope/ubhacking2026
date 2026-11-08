@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cny36wn5rqcy"]
+
+[ext_resource type="Script" uid="uid://d0pq824pe3ljo" path="res://scripts/Currency.gd" id="1_xp3wj"]
+
+[node name="Currency" type="Label" unique_id=1633462954]
+offset_right = 180.0
+offset_bottom = 23.0
+text = "0"
+script = ExtResource("1_xp3wj")

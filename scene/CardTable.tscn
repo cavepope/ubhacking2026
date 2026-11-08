@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://jfau057w4ar3" path="res://scene/card_scene.tscn" id="1_2twrx"]
 [ext_resource type="Script" uid="uid://fmb5obsfhyuh" path="res://scripts/card_table.gd" id="1_vw0ul"]
+[ext_resource type="PackedScene" uid="uid://cny36wn5rqcy" path="res://scene/Currency.tscn" id="2_61gdi"]
 [ext_resource type="PackedScene" uid="uid://dmlxwdwdxceh6" path="res://scene/deck.tscn" id="3_vw0ul"]
 
 [node name="CardTable" type="Node2D" unique_id=1706338384]
 script = ExtResource("1_vw0ul")
 
 [node name="table" type="Polygon2D" parent="." unique_id=481932870]
-position = Vector2(8, 0)
 scale = Vector2(2.5714283, 2.0249999)
 color = Color(0.054784574, 0.28832805, 0.011337961, 1)
 polygon = PackedVector2Array(0, 0, 448, 0, 448, 320, 0, 320)
@@ -19,16 +19,7 @@ polygon = PackedVector2Array(0, 0, 448, 0, 448, 320, 0, 320)
 position = Vector2(400, 32)
 
 [node name="Card2" parent="OppCards" unique_id=1517042053 instance=ExtResource("1_2twrx")]
-position = Vector2(616, 32)
-
-[node name="Card3" parent="OppCards" unique_id=217734626 instance=ExtResource("1_2twrx")]
-position = Vector2(688, 32)
-
-[node name="Card4" parent="OppCards" unique_id=406950085 instance=ExtResource("1_2twrx")]
 position = Vector2(472, 32)
-
-[node name="Card5" parent="OppCards" unique_id=363099260 instance=ExtResource("1_2twrx")]
-position = Vector2(544, 32)
 
 [node name="PlayerCards" type="Node2D" parent="." unique_id=522403625]
 
@@ -38,23 +29,138 @@ position = Vector2(400, 448)
 [node name="Card2" parent="PlayerCards" unique_id=1765455622 instance=ExtResource("1_2twrx")]
 position = Vector2(472, 448)
 
-[node name="Card3" parent="PlayerCards" unique_id=1804466728 instance=ExtResource("1_2twrx")]
-position = Vector2(544, 448)
-
-[node name="Card4" parent="PlayerCards" unique_id=1753634653 instance=ExtResource("1_2twrx")]
-position = Vector2(616, 448)
-
-[node name="Card5" parent="PlayerCards" unique_id=1042487649 instance=ExtResource("1_2twrx")]
-position = Vector2(688, 448)
-
 [node name="Deck" parent="." unique_id=817762067 instance=ExtResource("3_vw0ul")]
 position = Vector2(32, 16)
 
 [node name="Button" type="Button" parent="." unique_id=1862408156]
-self_modulate = Color(1, 1, 1, 0)
 offset_left = 8.0
 offset_top = 584.0
-offset_right = 49.0
+offset_right = 56.0
 offset_bottom = 632.0
 text = "Deal
 "
+
+[node name="debug_step" type="Button" parent="." unique_id=692474672]
+offset_left = 1088.0
+offset_top = 584.0
+offset_right = 1152.0
+offset_bottom = 640.0
+text = "DEBUG
+step"
+
+[node name="debug_view" type="Button" parent="." unique_id=2046919039]
+offset_left = 1088.0
+offset_top = 520.0
+offset_right = 1151.0
+offset_bottom = 576.0
+text = "DEBUG
+view"
+
+[node name="Discards" type="Node2D" parent="." unique_id=204493561]
+
+[node name="Card3" parent="Discards" unique_id=427930284 instance=ExtResource("1_2twrx")]
+position = Vector2(64, 224)
+
+[node name="Card2" parent="Discards" unique_id=988219675 instance=ExtResource("1_2twrx")]
+position = Vector2(48, 200)
+
+[node name="Card1" parent="Discards" unique_id=509461230 instance=ExtResource("1_2twrx")]
+position = Vector2(32, 176)
+
+[node name="Board" type="Node2D" parent="." unique_id=1493051861]
+
+[node name="Card5" parent="Board" unique_id=248354222 instance=ExtResource("1_2twrx")]
+position = Vector2(544, 256)
+
+[node name="Card4" parent="Board" unique_id=96058866 instance=ExtResource("1_2twrx")]
+position = Vector2(472, 256)
+
+[node name="Card3" parent="Board" unique_id=1575411642 instance=ExtResource("1_2twrx")]
+position = Vector2(400, 256)
+
+[node name="Card2" parent="Board" unique_id=1138899354 instance=ExtResource("1_2twrx")]
+position = Vector2(328, 256)
+
+[node name="Card1" parent="Board" unique_id=1408383679 instance=ExtResource("1_2twrx")]
+position = Vector2(256, 256)
+
+[node name="Winner" type="Label" parent="." unique_id=723132518]
+offset_left = 744.0
+offset_top = 96.0
+offset_right = 784.0
+offset_bottom = 119.0
+
+[node name="Pot" parent="." unique_id=1740040979 instance=ExtResource("2_61gdi")]
+offset_left = 960.0
+offset_top = 96.0
+offset_right = 1144.0
+offset_bottom = 119.0
+horizontal_alignment = 2
+
+[node name="Balance" parent="." unique_id=2067898940 instance=ExtResource("2_61gdi")]
+offset_left = 960.0
+offset_top = 32.0
+offset_right = 1144.0
+offset_bottom = 55.0
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="OppBalance" parent="." unique_id=610966911 instance=ExtResource("2_61gdi")]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 128.0
+offset_top = -40.0
+offset_right = 308.0
+offset_bottom = -17.0
+
+[node name="Fold" type="Button" parent="." unique_id=229426869]
+offset_left = 200.0
+offset_top = 584.0
+offset_right = 256.0
+offset_bottom = 632.0
+text = "Fold"
+
+[node name="Bet" type="SpinBox" parent="." unique_id=1714802393]
+offset_left = 72.0
+offset_top = 592.0
+offset_right = 184.0
+offset_bottom = 623.0
+
+[node name="Match" type="Button" parent="." unique_id=591213754]
+offset_left = 272.0
+offset_top = 584.0
+offset_right = 329.0
+offset_bottom = 632.0
+text = "Match"
+
+[node name="CurrentBet" type="Label" parent="." unique_id=1812805023]
+offset_left = 1000.0
+offset_top = 152.0
+offset_right = 1144.0
+offset_bottom = 175.0
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BalText" type="Label" parent="." unique_id=1952128762]
+offset_left = 1024.0
+offset_top = 8.0
+offset_right = 1144.0
+offset_bottom = 32.0
+text = "Balance"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="PotText" type="Label" parent="." unique_id=826157926]
+offset_left = 1016.0
+offset_top = 72.0
+offset_right = 1144.0
+offset_bottom = 95.0
+text = "Pot"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CurrBetText" type="Label" parent="." unique_id=1702702360]
+offset_left = 872.0
+offset_top = 128.0
+offset_right = 1148.0
+offset_bottom = 151.0
+text = "Your bet was raised!       Current bet"
